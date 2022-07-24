@@ -1,11 +1,12 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("https://i.imgur.com/XHe3gBp.jpg");
-  background-size: cover;
   color: white;
 }
-
+#mainphoto{
+  background: url("https://i.imgur.com/XHe3gBp.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 a {
   color: white;
 }
@@ -24,4 +25,7 @@ a {
   justify-content: center;
   align-items: center;
   color:white;
+}
+.navcolor{
+  color:greenyellow;
 }
