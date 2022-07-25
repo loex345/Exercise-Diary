@@ -10,12 +10,15 @@ const exerciseSchema = new Schema({
       type:Number,
       min:1
      },
-     RPE:{
+     rpe:{
        type:Number,
        min:1,
        max:10 
      },
-     //user:{type: Schema.Types.ObjectId, ref: 'User'},
+     resistance:{
+        type:Number,
+     },
+     user:{type: Schema.Types.ObjectId, ref: 'User'},
 
 });
 

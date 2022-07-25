@@ -1,14 +1,24 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 <table>
     <thead>
         <tr>
             <th>Exercise Name</th>
             <th>Exercise Date</th>
             <th>Exercise Repetitions </th>
+            <th>Exercise Resistance </th>
         </tr>
     </thead>
     <tbody>
+        <% exercises.forEach(function(e) { %>
+          <tr>
+            <td><=% e.title %></td>
+            <td><=% e.reps %></td>
+            <td><=% e.rpe %></td>
+            <td><=% e.resistance %></td>
+            <td><a href="/exercises/<%=e.id%>">DETAILS</a></td>
+          </tr>
+        <%}); %>
         <!-- place index information here -->
     </tbody>
 </table>
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>

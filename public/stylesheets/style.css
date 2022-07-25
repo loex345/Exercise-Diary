@@ -29,3 +29,12 @@ a {
 .navcolor{
   color:greenyellow;
 }
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}

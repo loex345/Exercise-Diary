@@ -1,4 +1,4 @@
-const Exercise = require('../models/execrise');
+const Exercise = require('../models/exercise');
 
 module.exports ={
     index,
@@ -7,14 +7,18 @@ module.exports ={
 };
 
 function index (req, res) {
-
+    //find all exercises
+ Exercise.find({}, function(err, exercises){
+  res.render('exercises/index', {title:'All Execrises', exercises})
+ });
 }
 
-function create (req, res) {
 
-}
 
 function newExercise (req, res){
-    
+ res.render('exercises/new', {title:'Add New Workout'});
 }
 
+
+function create (req, res) {
+}

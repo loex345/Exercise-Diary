@@ -5,6 +5,6 @@ const exercisesCtrl = require('../controllers/exercises');
 //to see all exercises
 router.get('/', exercisesCtrl.index);
 // to create new exercises
-router.get('/', exercisesCtrl.new);
+router.get('/new', exercisesCtrl.new);
 
 module.exports = router;
