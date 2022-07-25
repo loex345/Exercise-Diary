@@ -10,7 +10,7 @@
   <title><%= title %></title>
 </head>
 <body>
-  <nav class="navbar navcolor">
+  <nav class="navbar navcolor bg-light" id="bg-light">
     <img class="login" src="https://i.imgur.com/eYhbeb7.png">
     <% if (user) { %>
         <a href="/exercises" class="navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All WORKOUTS</a>
@@ -23,4 +23,4 @@
         <% } %>
   </nav>
   <main>
-    <h1><%= title %></h1>
+  

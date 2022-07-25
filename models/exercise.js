@@ -6,6 +6,12 @@ const exerciseSchema = new Schema({
      name:{
       type:String,
      },
+     date:{
+      type:Number,
+      default: function(){
+        return new Date().getFullYear();
+      },
+     },
      reps:{
       type:Number,
       min:1

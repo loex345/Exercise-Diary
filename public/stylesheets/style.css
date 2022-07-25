@@ -3,10 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
 }
-#mainphoto{
+/* #mainphoto{
   background: url("https://i.imgur.com/XHe3gBp.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
+} */
 a {
   color: white;
 }
@@ -21,10 +20,13 @@ a {
   height: 30px;
 }
 #landpage{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  justify-content: right;
+  align-items: right;
   color:white;
+  margin-left: 350px;
+  margin-top: 275px;
+  
 }
 .navcolor{
   color:greenyellow;
@@ -37,4 +39,15 @@ nav > a:hover:not(.active) {
 nav > a.active {
   color: white;
   cursor: default;
+}
+.overlay{
+  opacity:0.8;
+  background: url("https://i.imgur.com/XHe3gBp.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:1000;
 }

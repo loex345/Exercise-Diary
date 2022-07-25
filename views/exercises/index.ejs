@@ -11,10 +11,11 @@
     <tbody>
         <% exercises.forEach(function(e) { %>
           <tr>
-            <td><=% e.title %></td>
-            <td><=% e.reps %></td>
-            <td><=% e.rpe %></td>
-            <td><=% e.resistance %></td>
+            <td><%= e.name %></td>
+            <td><%= e.date %></td>
+            <td><%= e.reps %></td>
+            <td><%= e.rpe %></td>
+            <td><%= e.resistance %></td>
             <td><a href="/exercises/<%=e.id%>">DETAILS</a></td>
           </tr>
         <%}); %>

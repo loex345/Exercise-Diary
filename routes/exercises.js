@@ -4,7 +4,8 @@ const exercisesCtrl = require('../controllers/exercises');
 
 //to see all exercises
 router.get('/', exercisesCtrl.index);
-// to create new exercises
+// to  form for new exercises
 router.get('/new', exercisesCtrl.new);
-
+// to create new exercises
+router.post('/', exercisesCtrl.create)
 module.exports = router;
