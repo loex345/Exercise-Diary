@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<h3>Edit Exercise Name #<%=exercise.name %></h3>
+<h3>Edit Date <%=exercise.date %><</h3>
+<h3>Edit Repetitions <%=exercise.reps %><</h3>
+<h3>Edit Resistance <%=exercise.resistance %><</h3>
+<form action="/exercises/<%=exercise.id %>?_method=PUT" method="POST">
+    <Label>Name</Label>
+    <input type="text" name="name" value="<%= exercise.name %>">
+    <Label>Repetitions</Label>
+    <input type="number" name="reps" value="<%= exercise.reps %>">
+    <Label>Rate of Perceived</Label>
+    <input type="number" name="rpe" value="<%= exercise.rpe %>">
+    <Label>Resistance</Label>
+    <input type="number" name="resistance" value="<%= exercise.resistance %>">
+    <input type="submit" value="SAVE A WORKOUT">
+</form>
+<%- include('../partials/footer') %>

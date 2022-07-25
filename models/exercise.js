@@ -7,9 +7,9 @@ const exerciseSchema = new Schema({
       type:String,
      },
      date:{
-      type:Number,
+      type:Date,
       default: function(){
-        return new Date().getFullYear();
+        return new Date()
       },
      },
      reps:{
