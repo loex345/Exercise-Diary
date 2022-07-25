@@ -1,10 +1,14 @@
+
 const Exercise = require('../models/exercise');
 
 module.exports = {
     index,
     show,
     create,
-    new: newExercise
+    new: newExercise,
+    edit,
+    update,
+    delete:deleteExercise
 };
 
 function index(req, res) {
@@ -31,4 +35,24 @@ function create(req, res) {
 
 function newExercise(req, res) {
     res.render('exercises/new', { title: 'Add New Workout' });
+}
+
+function edit(req, res) {
+  const exercise = Exercise.findById(req.params.id, function(err, exercise){
+    res.render('exercises/edit', {title:'Update', exercise })
+});
+}
+//not working need help
+function update(req, res){
+  let exercise = Exercise.findById(req.params.id, req.body);
+  console.log(exercise);
+    res.redirect(`/exercises/${req.params.id}`);
+}
+
+function deleteExercise(req, res){
+const exercise = Exercise.findOne({'execrises._id':req.params.id});
+exercise.deleteOne(function(err){
+    console.log(err);
+    res.redirect('/exercises')
+});
 }

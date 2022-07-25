@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 <h3>Edit Exercise Name #<%=exercise.name %></h3>
-<h3>Edit Date <%=exercise.date %><</h3>
-<h3>Edit Repetitions <%=exercise.reps %><</h3>
-<h3>Edit Resistance <%=exercise.resistance %><</h3>
-<form action="/exercises/<%=exercise.id %>?_method=PUT" method="POST">
+<h3>Edit Date <%= exercise.date %></h3>
+<h3>Edit Repetitions <%= exercise.reps %></h3>
+<h3>Edit Resistance <%= exercise.resistance %></h3>
+<form action="/exercises/<%=exercise._id%>?_method=PUT" method="POST">
     <Label>Name</Label>
     <input type="text" name="name" value="<%= exercise.name %>">
     <Label>Repetitions</Label>

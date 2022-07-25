@@ -10,5 +10,10 @@
     <div><%= exercise.reps %></div>
     <div>Resistance</div>
     <div><%= exercise.resistance %></div>
+    <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
+    <form action="/exercises/<%= exercise._id%>?_method=DELETE" 
+         method="POST">
+         <button type="submit">Delete</button>  
+    </form>
 </section>
 <%- include('../partials/footer') %>

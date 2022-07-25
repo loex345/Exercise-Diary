@@ -6,10 +6,15 @@ const exercisesCtrl = require('../controllers/exercises');
 router.get('/', exercisesCtrl.index);
 // show route
 router.get('/new', exercisesCtrl.new);
-// to create new exercises
-router.get('/:id', exercisesCtrl.show);
 // to  form for new exercises
+router.get('/:id', exercisesCtrl.show);
+// to create new exercises
 router.post('/', exercisesCtrl.create);
-// to show details
+// to edit exercises
+router.get('/:id/edit', exercisesCtrl.edit);
+// to update
+router.put('/:id', exercisesCtrl.update);
+//Delete function
+router.delete('/:id', exercisesCtrl.delete)
 
 module.exports = router;
