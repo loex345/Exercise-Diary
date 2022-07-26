@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<form action="/foods" method="POST" id="new-form">
+    <label>Food Name</label>
+    <input type="text" name="foodName">
+    <label>Date</label>
+    <input type="date" name="date">
+    <label>Meal #</label>
+    <input type="number" name="MealNumber">
+    <label>Servings</label>
+    <input type="number" name="servings">
+    <label>Satiety</label>
+    <input type="number" name="satiety">
+    <!-- Add food input form here -->
+    <br>
+    <input type="submit" value="ADD NUTRITION">
+</form>
+<%- include('../partials/footer') %>

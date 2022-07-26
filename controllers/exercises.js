@@ -26,7 +26,7 @@ function show(req, res){
 
 function create(req, res) {
     let exercise = new Exercise(req.body);
-    console.log(exercise);
+    exercise.userRecommending = req.user.id;
     exercise.save(function (err) {
         if (err) return res.redirect('/exercises/new');
         res.redirect(`/exercises/${exercise._id}`);
@@ -38,21 +38,25 @@ function newExercise(req, res) {
 }
 
 function edit(req, res) {
-  const exercise = Exercise.findById(req.params.id, function(err, exercise){
-    res.render('exercises/edit', {title:'Update', exercise })
-});
+  Exercise.findOne({id: req.params.id, userRecommending:req.user.id}, function(err, exercise){
+      res.render('exercises/edit', {title:'Update', exercise })
+  });
 }
-//not working need help
+
 function update(req, res){
-  let exercise = Exercise.findById(req.params.id, req.body);
-  console.log(exercise);
-    res.redirect(`/exercises/${req.params.id}`);
+  Exercise.findOneAndUpdate(
+   {_id: req.params.id, userRecommending: req.user.id},
+   req.body,
+   {new:true},
+   function(err, exercise){
+    if (err || !exercise) return res.redirect('/exercises');
+   res.redirect(`/exercises/${exercise._id}`);
+   }
+  );
 }
 
 function deleteExercise(req, res){
-const exercise = Exercise.findOne({'execrises._id':req.params.id});
-exercise.deleteOne(function(err){
-    console.log(err);
-    res.redirect('/exercises')
-});
+ Exercise.findOneAndDelete({_id:req.params.id, userRecommending: req.user.id}, function(err){
+ res.redirect('/exercises');
+ });
 }

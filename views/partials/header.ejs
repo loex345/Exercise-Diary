@@ -15,8 +15,9 @@
     <% if (user) { %>
       <a href="/users" class="navcolor"<%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
         <a href="/exercises" class="navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All WORKOUTS</a>
-          <a href="/exercises/new" class="navcolor"	<%- title === 'Add Exercise' ? 'class="active"' : '' %>>ADD EXERCISE</a>
-          <a href="/food/new" class="navcolor" <%- title === 'Add Nutrition' ? 'class="active"' : '' %>>ADD NUTRITION</a>
+        <a href="/exercises/new" class="navcolor"	<%- title === 'Add Exercise' ? 'class="active"' : '' %>>ADD EXERCISE</a>
+        <a href="/foods" class="navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All NUTRITION</a>
+          <a href="/foods/new" class="navcolor" <%- title === 'Add Nutrition' ? 'class="active"' : '' %>>ADD NUTRITION</a>
           <a href="/logout" class="navcolor">LOG OUT</a>
         <% } else { %>
             <!-- add user name in navbar -->
