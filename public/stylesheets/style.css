@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: white;
+  color: gray;
 }
 /* #mainphoto{
   background: url("https://i.imgur.com/XHe3gBp.jpg") no-repeat center center fixed;
@@ -24,12 +24,12 @@ a {
   justify-content: right;
   align-items: right;
   color:white;
-  margin-left: 350px;
+  margin-left: 575px;
   margin-top: 275px;
   
 }
 .navcolor{
-  color:greenyellow;
+  color:rgb(14, 18, 9);
 }
 nav > a:hover:not(.active) {
   color: white;
@@ -50,4 +50,10 @@ nav > a.active {
   top:0px;
   left:0px;
   z-index:1000;
+}
+
+#new-form{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
 }

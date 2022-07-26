@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<form action="/exercises" method="POST">
+<form action="/exercises" method="POST" id="new-form">
     <label>Exercise Name</label>
     <input type="text" name="name">
     <label>Date</label>
@@ -11,6 +11,7 @@
     <label>Resistance</label>
     <input type="number" name="resistance">
     <!-- Add food input form here -->
+    <br>
     <input type="submit" value="Add New Workout">
 </form>
 <%- include('../partials/footer') %>

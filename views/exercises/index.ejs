@@ -1,14 +1,16 @@
 <%- include('../partials/header') %>
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>Exercise Name</th>
             <th>Exercise Date</th>
             <th>Exercise Repetitions </th>
             <th>Exercise Resistance </th>
+            <th>Rate of Perceived Exertion</th>
+            <th>Details</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table table-striped">
         <% exercises.forEach(function(e) { %>
           <tr>
             <td><%= e.name %></td>
