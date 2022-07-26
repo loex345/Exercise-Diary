@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<h3>Edit Date <%= food.date %></h3>
+<h3>Edit Food Name #<%=food.foodName %></h3>
+<h3>Edit Meal Number <%= food.mealNumber %></h3>
+<h3>Edit Servings <%= food.satiety %></h3>
+
+<form action="/foods/<%=food._id%>?_method=PUT" method="POST" id="new-form">
+    <Label></Label>
+    <input type="text" name="date" value="<%= food.date %>">
+    <Label></Label>
+    <input type="number" name="foodName" value="<%= food.foodName %>">
+    <Label></Label>
+    <input type="number" name="mealNumber" value="<%= food.mealNumber %>">
+    <Label></Label>
+    <input type="number" name="satiety" value="<%= food.satiety %>">
+    <br>
+    <input type="submit" value="SAVE A WORKOUT">
+</form>
+<%- include('../partials/footer') %>

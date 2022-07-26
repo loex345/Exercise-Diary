@@ -15,6 +15,6 @@ router.get('/:id/edit', exercisesCtrl.edit);
 // to update
 router.put('/:id', exercisesCtrl.update);
 //Delete function
-router.delete('/:id', exercisesCtrl.delete)
+router.delete('/:id', exercisesCtrl.delete);
 
 module.exports = router;

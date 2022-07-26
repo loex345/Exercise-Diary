@@ -5,5 +5,14 @@ const foodsCtrl = require('../controllers/foods');
 router.get('/', foodsCtrl.index);
 //to get new form
 router.get('/new', foodsCtrl.new);
-// to show new food
+// show function
+router.get('/:id', foodsCtrl.show);
+// to create new food
+router.post('/', foodsCtrl.create);
+// to edit foods
+router.get('/:id/edit', foodsCtrl.edit);
+// to update foods
+router.put('/:id', foodsCtrl.update);
+//Delete function
+router.delete('/:id', foodsCtrl.delete);
 module.exports = router;

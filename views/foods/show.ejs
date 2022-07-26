@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<sectio id="new-form">
+    <div>User</div>
+    <div><%= user.name %></div>
+    <div>Food name</div>
+    <div><%= food.foodName %></div>
+    <div>Date</div>
+    <div><%= food.date %></div>
+    <div>Meal Number</div>
+    <div><%= food.mealNumber %></div>
+    <div>Servings</div>
+    <div><%= food.servings %></div>
+    <div>Satiety</div>
+    <div><%= food.satiety %></div>
+    <a href="/foods/<%= food._id %>/edit">Edit Food</a>
+    <form action="/foods/<%= food._id%>?_method=DELETE" 
+         method="POST">
+         <button type="submit">Delete</button>  
+    </form>
+</section>
+<%- include('../partials/footer') %>
