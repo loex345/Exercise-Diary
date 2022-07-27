@@ -1,7 +1,18 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-
+//comments on workouts
+const commentSchema = new Schema({
+    content:{
+      type:String,
+    },
+    duration:{
+      type:Number,
+    },
+    user:{type: Schema.Types.ObjectId, ref:'User'},
+    userName: String,
+    userAvatar: String
+});
 const exerciseSchema = new Schema({
      name:{
       type:String,
@@ -25,7 +36,9 @@ const exerciseSchema = new Schema({
         type:Number,
      },
      user:{type: Schema.Types.ObjectId, ref: 'User'},
-
+     comments:[commentSchema]
+    }, {
+    timestamps: true 
 });
 
 module.exports = mongoose.model('Exercise', exerciseSchema)

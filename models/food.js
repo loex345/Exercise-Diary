@@ -21,6 +21,9 @@ const foodSchema = new Schema({
     satiety:{
         type:Number,
     },
+    disc:{
+        type:String,
+    },
     user:{type: Schema.Types.ObjectId, ref: 'User'},
 });
 

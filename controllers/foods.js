@@ -22,7 +22,7 @@ function newFood(req, res){
 
 function create(req, res){
     const food = new Food(req.body);
-    food.userRecommending = req.user.id;
+    food.user = req.user._id;
     food.save(function(err){
        if(err) return res.redirect('foods/new')
        res.redirect(`/foods/${food.id}`);
@@ -36,14 +36,14 @@ function show(req, res){
 }
 
 function edit(req, res){
-    Food.findOne({id:req.params.id, userRecommending:req.user.id}, function(err, food){
+    Food.findOne({id:req.params.id, user:req.user.id}, function(err, food){
       res.render('foods/edit', {title:'Update Food', food})
     });
 }
 
 function update(req, res){
     Food.findOneAndUpdate(
-     {id: req.params.id, userRecommending: req.user.id},
+     {id: req.params.id, user: req.user.id},
      req.body,
      {new:true},
      function(err, food){
@@ -54,7 +54,7 @@ function update(req, res){
   }
 
   function deleteFood(req, res){
-    Food.findOneAndDelete({_id:req.params.id, userRecommending: req.user.id}, function(err){
+    Food.findOneAndDelete({_id:req.params.id, user: req.user.id}, function(err){
     res.redirect('/foods');
     });
    } 
