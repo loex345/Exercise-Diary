@@ -15,7 +15,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const exercisesRouter = require('./routes/exercises')
 const foodsRouter = require('./routes/foods')
-const commentsRouter = require('./routes/foods')
+const commentsRouter = require('./routes/comments')
 
 var app = express();
 

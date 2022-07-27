@@ -5,4 +5,8 @@ const commentsCtrl= require('../controllers/comments');
 // comments
 
 //post for execrise review
-router.post('/comments/:id/edit', commentsCtrl.create)
+router.post('/exercises/:id/comments', commentsCtrl.create);
+// Delete /reviews/:id
+router.delete('/comments/:id', commentsCtrl.delete)
+
+module.exports = router;

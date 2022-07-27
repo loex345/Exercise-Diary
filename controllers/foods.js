@@ -54,7 +54,7 @@ function update(req, res){
   }
 
   function deleteFood(req, res){
-    Food.findOneAndDelete({_id:req.params.id, user: req.user.id}, function(err){
+    Food.findOneAndDelete({id:req.params.id, user: req.user.id}, function(err){
     res.redirect('/foods');
     });
    } 

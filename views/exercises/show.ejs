@@ -11,18 +11,57 @@
     <div>Resistance</div>
     <div><%= exercise.resistance %></div>
     <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
-    <% if (user) { %>
-     <form action="" method="POST" action="/foods/">
-     <label>Comments</label>
-     <textarea name="content"></textarea>
-     <label>Duration:</label>
-     <input type="number" name="duration">
-     <button type="submit" value="Add a Comments">Comments</button>
-    </form>
-   <% } %>
+
     <form action="/exercises/<%= exercise._id%>?_method=DELETE" 
          method="POST">
          <button type="submit">Delete</button>  
     </form>
+    <% if (user) { %>
+     <form action="/exercises/<%= exercise._id %>/comments" method="POST" >
+     <label>Comments</label>
+     <textarea name="content"></textarea>
+     <label>Duration:</label>
+     <input type="number" name="duration">
+     <button type="submit" value="">Add a Comments</button>
+    </form>
+   <% } else { %>
+   <br>
+    <h5>Not logged in</h5>
+    <% } %>
+
+    <% if (exercise.comments.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Date</th>
+              <th>Review</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% exercise.comments.forEach(function(c) { %>
+              <tr>
+                <td class="review-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= c.userName %></td>
+                <td><%= c.content %></td>
+                <td><%= c.duration %></td>
+                <td>
+                  <% if ( user?._id.equals(c.user) ) { %>
+                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                      <button type="submit">Delete</button>
+                    </form>
+                  <% } %>
+                </td>
+              </tr>
+              <% }); %>
+              <tr>
+                <td colspan="3"></td>
+              </tr>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No comments yet</h5>
+      <% } %>
+      <br>
 </section>
 <%- include('../partials/footer') %>

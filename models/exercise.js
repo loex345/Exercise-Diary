@@ -13,6 +13,7 @@ const commentSchema = new Schema({
     userName: String,
     userAvatar: String
 });
+
 const exerciseSchema = new Schema({
      name:{
       type:String,

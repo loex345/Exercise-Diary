@@ -5,13 +5,13 @@
 <h3>Edit Servings <%= food.satiety %></h3>
 
 <form action="/foods/<%=food._id%>?_method=PUT" method="POST" id="new-form">
-    <Label></Label>
-    <input type="text" name="date" value="<%= food.date %>">
-    <Label></Label>
-    <input type="number" name="foodName" value="<%= food.foodName %>">
-    <Label></Label>
+    <Label>Edit Date</Label>
+    <input type="datetime-local" name="date" value="<%= food.date %>">
+    <Label>Food Name</Label>
+    <input type="text" name="foodName" value="<%= food.foodName %>">
+    <Label> Number of Meals</Label>
     <input type="number" name="mealNumber" value="<%= food.mealNumber %>">
-    <Label></Label>
+    <Label>Satiety</Label>
     <input type="number" name="satiety" value="<%= food.satiety %>">
     <br>
     <input type="submit" value="SAVE A WORKOUT">
