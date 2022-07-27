@@ -11,11 +11,12 @@
     <div>Resistance</div>
     <div><%= exercise.resistance %></div>
     <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
-
+    
     <form action="/exercises/<%= exercise._id%>?_method=DELETE" 
          method="POST">
          <button type="submit">Delete</button>  
     </form>
+
     <% if (user) { %>
      <form action="/exercises/<%= exercise._id %>/comments" method="POST" >
      <label>Comments</label>
@@ -36,7 +37,6 @@
               <th>User</th>
               <th>Date</th>
               <th>Review</th>
-              <th>Rating</th>
             </tr>
           </thead>
           <tbody>
@@ -46,11 +46,11 @@
                 <td><%= c.content %></td>
                 <td><%= c.duration %></td>
                 <td>
-                  <% if ( user?._id.equals(c.user) ) { %>
-                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                      <button type="submit">Delete</button>
+                    <% if ( user?._id.equals(c.user) ) { %>
+                    <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                      <button type="submit">X</button>
                     </form>
-                  <% } %>
+                    <% } %>
                 </td>
               </tr>
               <% }); %>

@@ -23,7 +23,7 @@ function deleteComment(req, res) {
   Exercise.findOne({'comments._id': req.params.id, 'comments.userId': req.user._id},
   function(err, exercise) {
     if (!exercise || err ) return res.redirect(`/exercises/${exercise._id}`);
-    exercise.comment.remove(req.params.id);
+    exercise.comments.remove(req.params.id);
     exercise.save(function(err){
          res.redirect(`/exercises/${exercise._id}`);
       });
