@@ -2,59 +2,59 @@ const Food = require('../models/food');
 
 module.exports = {
     index,
-    new:newFood,
+    new: newFood,
     create,
     update,
     show,
     edit,
-    delete:deleteFood
+    delete: deleteFood
 };
 
-function index(req, res){
-    Food.find({},function(err,foods){
-       res.render('foods/index',{title:'All Nutrition', foods})
+function index(req, res) {
+    Food.find({}, function (err, foods) {
+        res.render('foods/index', { title: 'All Nutrition', foods })
     });
 }
 
-function newFood(req, res){
-    res.render('foods/new',{title:'Add New Food'});
+function newFood(req, res) {
+    res.render('foods/new', { title: 'Add New Food' });
 }
 
-function create(req, res){
+function create(req, res) {
     const food = new Food(req.body);
     food.user = req.user._id;
-    food.save(function(err){
-       if(err) return res.redirect('foods/new')
-       res.redirect(`/foods/${food.id}`);
+    food.save(function (err) {
+        if (err) return res.redirect('foods/new')
+        res.redirect(`/foods/${food.id}`);
     });
 }
 
-function show(req, res){
-    Food.findById(req.params.id, function(err,food){
-      res.render('foods/show', {title:'Food', food})
+function show(req, res) {
+    Food.findById(req.params.id, function (err, food) {
+        res.render('foods/show', { title: 'Food', food })
     })
 }
 
-function edit(req, res){
-    Food.findOne({id:req.params.id, user:req.user.id}, function(err, food){
-      res.render('foods/edit', {title:'Update Food', food})
+function edit(req, res) {
+    Food.findOne({ id: req.params.id, user: req.user.id }, function (err, food) {
+        res.render('foods/edit', { title: 'Update Food', food })
     });
 }
 
-function update(req, res){
+function update(req, res) {
     Food.findOneAndUpdate(
-     {id: req.params.id, user: req.user.id},
-     req.body,
-     {new:true},
-     function(err, food){
-      if (err || !food) return res.redirect('/food');
-     res.redirect(`/foods/${food.id}`);
-     }
+        { id: req.params.id, user: req.user.id },
+        req.body,
+        { new: true },
+        function (err, food) {
+            if (err || !food) return res.redirect('/food');
+            res.redirect(`/foods/${food.id}`);
+        }
     );
-  }
+}
 
-  function deleteFood(req, res){
-    Food.findOneAndDelete({id:req.params.id, user: req.user.id}, function(err){
-    res.redirect('/foods');
+function deleteFood(req, res) {
+    Food.findOneAndDelete({ id: req.params.id, user: req.user.id }, function (err) {
+        res.redirect('/foods');
     });
-   } 
+} 

@@ -13,7 +13,7 @@ passport.use(
     // The verify callback function
     // Marking a function as an async function
     // allows us to consume promises using await
-    async function(accessToken, refreshToken, profile, cb) {
+    async function (accessToken, refreshToken, profile, cb) {
       // A user has logged in with OAuth...
       // Instead of using promise.then with a callback,
       // we can use the await keyword followed by the promise.
@@ -42,7 +42,7 @@ passport.use(
   )
 );
 
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function (user, cb) {
   // Return a nugget of info that passport
   // will give us each time a request is made by
   // this logged in user
@@ -50,7 +50,7 @@ passport.serializeUser(function(user, cb) {
 });
 
 // Called with every request by a logged in user
-passport.deserializeUser(async function(userId, cb) {
+passport.deserializeUser(async function (userId, cb) {
   // Return the user's doc so that passport
   // can assign it to req.user
   const user = await User.findById(userId);

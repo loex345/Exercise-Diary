@@ -3,12 +3,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: gray;
 }
+
 /* #mainphoto{
   background: url("https://i.imgur.com/XHe3gBp.jpg") no-repeat center center fixed;
 } */
 a {
   color: white;
 }
+
 .login {
   display: flex;
   justify-content: center;
@@ -19,40 +21,44 @@ a {
 .login img {
   height: 30px;
 }
-#landpage{
-  display:flex;
+
+#landpage {
+  display: flex;
   justify-content: center;
   align-items: center;
-  color:white;
+  color: white;
   margin: auto;
   margin-top: 17.563rem;
 }
-.navcolor{
-  color:rgb(14, 18, 9);
+
+.navcolor {
+  color: rgb(14, 18, 9);
 }
-nav > a:hover:not(.active) {
+
+nav>a:hover:not(.active) {
   color: white;
   background-color: #424748;
   border-radius: 4px;
 }
 
-nav > a.active {
+nav>a.active {
   color: white;
   cursor: default;
 }
-.overlay{
-  opacity:0.8;
+
+.overlay {
+  opacity: 0.8;
   background: url("https://i.imgur.com/XHe3gBp.jpg") no-repeat center center fixed;
   background-size: cover;
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
-  z-index:1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
 }
 
-#new-form{
+#new-form {
   display: grid;
   grid-gap: 5px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
@@ -60,22 +66,29 @@ nav > a.active {
   margin-left: 7rem;
 }
 
-.centerpage{
-  display:flex;
+.centerpage {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-label{
+label {
   height: .5rem;
 }
 
-input, button, textarea  {
+input,
+button,
+textarea {
   border: 2px solid gray;
   border-radius: 4px;
 }
 
-#movecomments{
+#movecomments {
   margin-right: 5rem;
 }
 
+#avatarpicture {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}

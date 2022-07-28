@@ -4,7 +4,7 @@ const exercisesCtrl = require('../controllers/exercises');
 const isLoggedIn = require('../config/auth');
 
 //to see all exercises
-router.get('/',isLoggedIn, exercisesCtrl.index);
+router.get('/', isLoggedIn, exercisesCtrl.index);
 // show route
 router.get('/new', exercisesCtrl.new);
 // to  form for new exercises
