@@ -7,7 +7,7 @@ module.exports = {
 
 function create (req, res) {
     Exercise.findById(req.params.id, function(err,exercise){
-      req.body.userId = req.user._id;
+      req.body.user = req.user._id;
       req.body.userName = req.user.name;
       req.body.userAvatar = req.user.avatar;
       console.log(exercise);

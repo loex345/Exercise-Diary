@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 <form action="/exercises" method="POST" id="new-form">
     <label>Exercise Name</label>
-    <input type="text" name="name">
+    <input type="text" name="name" required>
     <label>Date</label>
-    <input type="datetime-local" name="date">
+    <input type="datetime-local" name="date" required>
     <label>Reps</label>
-    <input type="number" name="reps">
+    <input type="number" name="reps" required>
     <label>Rate of Perceived Exertion</label>
-    <input type="number" name="rpe">
+    <input type="number" name="rpe" required>
     <label>Resistance</label>
-    <input type="number" name="resistance">
+    <input type="number" name="resistance" required>
     <!-- Add food input form here -->
     <br>
     <input type="submit" value="Add New Workout">

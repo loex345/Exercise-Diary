@@ -11,57 +11,61 @@
     <div>Resistance</div>
     <div><%= exercise.resistance %></div>
     <a href="/exercises/<%= exercise._id %>/edit">Edit Exercise</a>
-    
+   
     <form action="/exercises/<%= exercise._id%>?_method=DELETE" 
          method="POST">
-         <button type="submit">Delete</button>  
+         <button type="submit">Delete Entry</button>  
     </form>
 
+    
     <% if (user) { %>
-     <form action="/exercises/<%= exercise._id %>/comments" method="POST" >
-     <label>Comments</label>
-     <textarea name="content"></textarea>
-     <label>Duration:</label>
-     <input type="number" name="duration">
+    <br>
+  <form action="/exercises/<%= exercise._id %>/comments" method="POST" id="exercisecommentform">
+      <div class="centerpage" id="movecomments">
+      <label>Comments:</label>
+      <textarea name="content"></textarea>
+      </div>
+    <label>Duration:</label>
+    <input type="number" name="duration">
      <button type="submit" value="">Add a Comments</button>
     </form>
    <% } else { %>
-   <br>
+    <br>
     <h5>Not logged in</h5>
     <% } %>
-
+    <br>
     <% if (exercise.comments.length) { %>
-        <table>
-          <thead>
-            <tr>
-              <th>User</th>
-              <th>Date</th>
-              <th>Review</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% exercise.comments.forEach(function(c) { %>
-              <tr>
-                <td class="review-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= c.userName %></td>
-                <td><%= c.content %></td>
-                <td><%= c.duration %></td>
-                <td>
-                    <% if ( user?._id.equals(c.user) ) { %>
-                    <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                      <button type="submit">X</button>
-                    </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Content</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% exercise.comments.forEach(function(c) { %>
+                    <tr>
+                        <td class="review-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= c.userName %></td>
+                        <td><%= c.content %></td>
+                        <td><%= c.duration %></td>
+                        <td>
+                            <% if ( user?._id.equals(c.user) ) { %>
+                                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">X</button>
+                                </form>
+                                <% } %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                        <tr>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <h5>No comments yet</h5>
                     <% } %>
-                </td>
-              </tr>
-              <% }); %>
-              <tr>
-                <td colspan="3"></td>
-              </tr>
-          </tbody>
-        </table>
-      <% } else { %>
-        <h5>No comments yet</h5>
-      <% } %>
-      <br>
+                    <br>
 </section>
 <%- include('../partials/footer') %>

@@ -20,13 +20,12 @@ a {
   height: 30px;
 }
 #landpage{
-  display: inline-block;
-  justify-content: right;
-  align-items: right;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   color:white;
-  margin-left: 575px;
-  margin-top: 275px;
-  
+  margin: auto;
+  margin-top: 17.563rem;
 }
 .navcolor{
   color:rgb(14, 18, 9);
@@ -34,6 +33,7 @@ a {
 nav > a:hover:not(.active) {
   color: white;
   background-color: #424748;
+  border-radius: 4px;
 }
 
 nav > a.active {
@@ -54,6 +54,28 @@ nav > a.active {
 
 #new-form{
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 5px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
+  padding: 2rem;
+  margin-left: 7rem;
 }
+
+.centerpage{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label{
+  height: .5rem;
+}
+
+input, button, textarea  {
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+
+#movecomments{
+  margin-right: 5rem;
+}
+
