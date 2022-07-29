@@ -39,13 +39,13 @@ Exercise Diary is a basic execrise journaling app that is created to record exer
 <h3><a href="https://exercise-diary-01.herokuapp.com/" target="_blank">Click Here For App</a></h3>
 
 ### Instructions
-1.Log on to app using Google signon
-2.As you are completing your workout enter each exercise as needed using the Add new Exercise
-3.Enter food as needed
-4.Post comments on exercises as needed.
+1. Log on to app using Google sign-on
+2. As you are completing your workout enter each exercise as needed using the Add new Exercise
+3. Enter food as needed
+4. Post comments on exercises as needed.
 
-## Links
-https://trello.com/b/KsFjm6Yw/p2-board
+## Trello Link
+<h3><a href="https://trello.com/b/KsFjm6Yw/p2-board" target="_blank"> Trello Link </a><h3>
 
  ## Next Steps
  - Add more intergrated reporting so that users can see exercises by day
