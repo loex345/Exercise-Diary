@@ -24,6 +24,9 @@ const foodSchema = new Schema({
     disc: {
         type: String,
     },
+    foruser:{
+        type: String,
+    },
     user: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 

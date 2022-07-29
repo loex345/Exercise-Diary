@@ -1,17 +1,19 @@
 <%- include('../partials/header') %>
 <form action="/foods" method="POST" id="new-form">
+    <label>User Reporting</label>
+    <input type="text" name="foruser" value="<%=user.name %>">
     <label>Food Name</label>
-    <input type="text" name="foodName">
+    <input type="text" name="foodName" required>
     <label>Date</label>
-    <input type="datetime-local" name="date">
+    <input type="datetime-local" name="date" required>
     <label>Meal #</label>
-    <input type="number" name="mealNumber">
+    <input type="number" name="mealNumber" required>
     <label>Servings</label>
-    <input type="number" name="servings">
+    <input type="number" name="servings" required>
     <label>Satiety</label>
-    <input type="number" name="satiety">
+    <input type="number" name="satiety" required>
     <label>Discription</label>
-    <input type="text" name="disc">
+    <input type="text" name="disc" required>
     <!-- Add limit-->
     <br>
     <input type="submit" value="ADD NUTRITION">

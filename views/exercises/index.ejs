@@ -2,6 +2,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Created by:</th>
             <th>Exercise Name</th>
             <th>Exercise Date</th>
             <th>Exercise Repetitions </th>
@@ -13,6 +14,7 @@
     <tbody class="table table-striped">
         <% exercises.forEach(function(e) { %>
           <tr>
+            <td><%= e.createdby %></td>
             <td><%= e.name %></td>
             <td><%= e.date %></td>
             <td><%= e.reps %></td>

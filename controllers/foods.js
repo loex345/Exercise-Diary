@@ -47,7 +47,8 @@ function update(req, res) {
         req.body,
         { new: true },
         function (err, food) {
-            if (err || !food) return res.redirect('/food');
+            console.log(err);
+            if (err || !food) return res.redirect('/foods');
             res.redirect(`/foods/${food.id}`);
         }
     );

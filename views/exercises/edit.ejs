@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
-<h3>Edit Exercise Name #<%=exercise.name %></h3>
-<h3>Edit Date <%= exercise.date %></h3>
-<h3>Edit Repetitions <%= exercise.reps %></h3>
-<h3>Edit Resistance <%= exercise.resistance %></h3>
 <form action="/exercises/<%=exercise._id%>?_method=PUT" method="POST" id="new-form">
+    <Label>Created by:</Label>
+    <input type="text" name="createdby" value="<%= exercise.createdby %>">
     <Label>Name</Label>
     <input type="text" name="name" value="<%= exercise.name %>">
     <Label>Date</Label>
     <input type="datetime-local" name="date" value="<%= exercise.date %>">
-    <Label>Rate of Perceived</Label>
+    <Label>Rate of Perceived Exertion</Label>
     <input type="number" name="rpe" value="<%= exercise.rpe %>">
+    <Label>Rate of Repetitions</Label>
+    <input type="number" name="reps" value="<%= exercise.reps %>">
     <Label>Resistance</Label>
     <input type="number" name="resistance" value="<%= exercise.resistance %>">
     <br>

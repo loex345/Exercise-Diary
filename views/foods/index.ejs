@@ -2,6 +2,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>User Reporting</th>
             <th>Food Name</th>
             <th>Food Date</th>
             <th>Food MealNumber </th>
@@ -13,6 +14,7 @@
     <tbody class="table table-striped">
         <% foods.forEach(function(f) { %>
           <tr>
+            <td><%= f.foruser %></td>
             <td><%= f.foodName %></td>
             <td><%= f.date %></td>
             <td><%= f.mealNumber %></td>

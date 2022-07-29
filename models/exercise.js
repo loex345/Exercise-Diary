@@ -18,6 +18,9 @@ const exerciseSchema = new Schema({
   name: {
     type: String,
   },
+  createdby:{
+    type:String,
+  },
   date: {
     type: Date,
     default: function () {

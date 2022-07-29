@@ -7,6 +7,20 @@
 Exercise Diary is a basic execrise journaling app that is created to record exercises and food intake. Goal of the app is to create accountability and provide a place for users to comment on exercises completed.
 <hr>
 <h2> Screenshots </h2>
+<figcaption> Front page </figcaption>
+<img src="https://i.imgur.com/lfAPMQy.jpg">
+<hr>
+<figcaption>All Exercises</figcaption>
+<img src="https://i.imgur.com/kRFVwQB.jpg">
+<hr>
+<figcaption>Add new Workout</figcaption>
+<img src="https://i.imgur.com/lGFRnYV.jpg">
+<hr>
+<figcaption>All Nutrition</figcaption>
+<img src="https://i.imgur.com/zmXYqR6.jpg">
+<hr>
+<figcaption>Nutrition</figcaption>
+<img src="https://i.imgur.com/AcK0W5F.jpg">
 <hr>
 
 ## :computer: Technologies Used 
@@ -30,7 +44,7 @@ Exercise Diary is a basic execrise journaling app that is created to record exer
 3.Enter food as needed
 4.Post comments on exercises as needed.
 
-## links
+## Links
 https://trello.com/b/KsFjm6Yw/p2-board
 
  ## Next Steps
