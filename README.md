@@ -51,3 +51,4 @@ Exercise Diary is a basic exercise journaling app that is created to record exer
  - Add more intergrated reporting so that users can see exercises by day
  - Add more user centric options for private workouts
  - Add API of exercises and good foods choices
+ - Add better mobile views
