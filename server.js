@@ -33,11 +33,12 @@ app.use(methodOverride('_method'));
 
 app.use(session({
   secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
   store: new MongoStore({
     mongoUrl: process.env.DATABASE_URL,
-  })
-  // resave: false,
-  // saveUninitialized: true
+    client: process.env.GOOGLE_CLIENT_ID
+  }),
 }));
 
 // app.use(session({... code above
