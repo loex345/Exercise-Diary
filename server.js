@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const passport = require('passport');
 
 require('dotenv').config();
@@ -32,8 +33,11 @@ app.use(methodOverride('_method'));
 
 app.use(session({
   secret: process.env.SECRET,
-  resave: false,
-  saveUninitialized: true
+  store: new MongoStore({
+    mongoUrl: process.env.DATABASE_URL,
+  })
+  // resave: false,
+  // saveUninitialized: true
 }));
 
 // app.use(session({... code above
