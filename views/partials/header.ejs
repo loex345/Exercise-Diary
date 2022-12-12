@@ -11,18 +11,34 @@
 </head>
 <body>
   <nav class="navbar navcolor bg-light" id="bg-light">
-    <img class="login" src="https://i.imgur.com/eYhbeb7.png">
-    <% if (user) { %>
-      <a href="/users" class="navcolor"<%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
-        <a href="/exercises" class="navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All WORKOUTS</a>
-        <a href="/exercises/new" class="navcolor"	<%- title === 'Add Exercise' ? 'class="active"' : '' %>>ADD EXERCISE</a>
-        <a href="/foods" class="navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All NUTRITION</a>
-        <a href="/foods/new" class="navcolor" <%- title === 'Add Nutrition' ? 'class="active"' : '' %>>ADD NUTRITION</a>
-        <img src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-referrer" id="avatarpicture"> <%= user.name %><a href="/logout" class="navcolor"> LOG OUT</a>
+    <div class="container-fluid">
+      <img class="login navbar-brand" src="https://i.imgur.com/eYhbeb7.png">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+      <% if (user) { %>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+          <a aria-current="page" href="/users" class="nav-link active navcolor"<%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
+          </li>
+        <a href="/exercises" class="nav-link navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All WORKOUTS</a>
+        <li class="nav-item">
+        <a href="/exercises/new" class="nav-link navcolor"	<%- title === 'Add Exercise' ? 'class="active"' : '' %>>ADD EXERCISE</a>
+         </li>
+        <a href="/foods" class="nav-link navcolor"<%- title === 'All EXERCISES' ? 'class="active"' : '' %>>All NUTRITION</a>
+        <li class="nav-item">
+        <a href="/foods/new" class="nav-link navcolor" <%- title === 'Add Nutrition' ? 'class="active"' : '' %>>ADD NUTRITION</a>
+        </li>
+        <li class="nav-item">
+        <img src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-referrer" id="avatarpicture"> <%= user.name %><a href="/logout" class="nav-link navcolor"> LOG OUT</a>
         <% } else { %>
-            <!-- add user name in navbar -->
-          <a href="/auth/google" class="login navcolor">LOG IN&nbsp;<img src="https://i.imgur.com/eYhbeb7.png"></a>
-        <% } %>
+          <!-- add user name in navbar -->
+          <a href="/auth/google" class="nav-link login navcolor">LOG IN&nbsp;<img src="https://i.imgur.com/eYhbeb7.png"></a>
+          <% } %>
+        </li>
+        </div>
+      </div>
   </nav>
   <h1 class="centerpage"><%= title %></h1>
   <main>
